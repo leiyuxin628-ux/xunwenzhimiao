@@ -29,19 +29,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-img {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
-img.loaded {
-  opacity: 1;
-}
 body{
 
 background:
@@ -461,16 +449,7 @@ class="preview">
 </div>
 
 <script>
-document.querySelectorAll("img").forEach(img => {
-  if (img.complete) {
-    img.classList.add("loaded");
-  } else {
-    img.addEventListener("load", () => {
-      img.classList.add("loaded");
-    });
-  }
-});
-</script>
+
 let currentCategory="全部";
 
 let selectedProduct="";
@@ -844,14 +823,9 @@ document
 
 setTimeout(()=>{
 
-const img = document.getElementById("pattern");
-
-img.style.opacity = 0;
-
-setTimeout(() => {
-  img.src = p.img;
-  img.style.opacity = 1;
-}, 150);
+document
+.getElementById("pattern")
+.src=p.img;
 
 document
 .getElementById("name")
